@@ -1,0 +1,113 @@
+print("Hello world! \n Hello World")
+o/p:Hello world! 
+ Hello World
+
+print("Hello" + "World")
+o/p:HelloWorld
+
+print("Hello" + " " + "World")
+o/p:Hello World
+
+*using input():it is a function looks preety much identical to print() function, but instead of the word print,its just got word input nd inside the parentheses.
+Ex:
+input("what is your name:")
+o/p:
+what is your name:navyatha
+
+print("Hello" + input("what is your name:"))
+o/p:Hellonavyatha
+
+print("Hello" + input("what is your name:") +"!")
+o/p:Hellonavya!
+
+* variables:
+name = input("what is ur name:")
+print(name)
+o/p:what is ur name:navyatha
+navyatha
+
+name="navyatha"
+print(name)
+name = "smiley"
+print(name)
+o/p:navyatha
+smiley
+
+a = "navyatha grandhi"
+print(len(a))
+o/p:16
+
+name = "navyatha"
+print(name)
+name=("smiley")
+print(name)
+print(len(input("what is ur name:")))
+o/p:navyatha
+smiley
+what is ur name:navyathasmiley
+14
+
+name="navyatha"
+length=len(name)
+print(length)
+o/p:what is ur name:navyatha
+8
+
+code1:
+We have 2 variables glass1 and glass2. glass1 contains milk and glass2 contains juice. Write 3 lines of code to switch the contents of the variables. You are not allowed to type the words "milk" or "juice". You are only allowed to use variables to solve this exercise.
+
+sol:
+glass1 = "milk"
+glass2 = "juice"
+temp = glass1
+glass1 = glass2
+glass2 = temp
+
+project day1:
+
+print("welcome to Band Name Generator.")
+city = input("which city did u grow up:\n")
+print(city)
+pet = input ("what is the name of ur pet:\n")
+print(pet)
+print("ur band name could be:"+ city +" "+ pet )
+
+o/p:welcome to Band Name Generator.
+which city did u grow up:
+anakapalli
+anakapalli
+what is the name of ur pet:
+doggy
+doggy
+ur band name could be:anakapalli doggy
+
+
+trainer homework:
+Title : BIO Printer
+
+Inputs:
+Name - xxxx
+City - yyyy
+Age - zz
+Hobby - uuuuu uuuuu
+
+Output:
+My Name is xxxx, I am zz year's old, I am from yyyy, My favourite hobby is to uuuuu uuuuu.
+
+solution:
+print("BIO Printer")
+Name = input("My Name is:")
+city = input("which city did u grow up:")
+Age = input("I am Year's old:")
+Hobby = input("My favourite hobby is:")
+
+
+print("BIO Printer"+ Name +" "+ city+" " + Age + " "+ Hobby)
+
+o/p:
+BIO Printer
+My Name is:Navyatha
+which city did u grow up:anakapalli
+I am Year's old:22
+My favourite hobby is:listening music
+BIO PrinterNavyatha anakapalli 22 listening music
