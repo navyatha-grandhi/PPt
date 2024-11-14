@@ -1,0 +1,20 @@
+Dictionary Practice:
+
+travel_log = {
+
+     "France":{
+         "num of times visited": 8,
+         "cities_visited":["Berlin","Hamburg","stuttgart"],
+         "total_visits":12
+     } ,
+    "Germany": {
+"num of times visited": 8,
+         "cities_visited":["Berlin","Hamburg","stuttgart"],
+         "total_visits":12
+
+    },
+
+ }
+print(travel_log["Germany"]["cities_visited"][2])
+o/p:
+stuttgart
