@@ -1,0 +1,15 @@
+Polymorphism code:
+
+class French:
+    def say_hello(self):
+        print('bonjour')
+class Chinese:
+    def say_hello(self):
+        print('你好')
+def intro(lang):
+    lang.say_hello()
+navya = French()
+likhi = Chinese()
+intro(navya)
+
+O/p: bonjour
