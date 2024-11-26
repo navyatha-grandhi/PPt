@@ -1,0 +1,85 @@
+Task :
+
+1. Write a program that prints "Hello, My name is [Your Name]"
+
+Solution: 1
+print("Bio Printer")
+Greetings=input("Hello , " )
+Name=input("My name is : ")                                  
+print("BIO Printer"+ Greetings + " + " + Name , " ")
+
+O/p:
+Bio Printer
+Hello , 
+My name is : Grandhi Lakshmi Navyatha.
+                Or 
+Solution2: 
+				
+name = input("Hello ," " " "My name is ")
+print(name) 
+O/p:Hello , My name is Grandhi Lakshmi Navyatha
+ 
+2.Create a program that takes two numbers as input and performs
+addition, subtraction, multiplication, and division. Handle
+potential errors like division by zero.
+
+Solution:
+
+calculator =  input("What Operation you would like to Perform  (Add/Sub/Multiply/Division) ?")
+numbers1 = int(input("Enter 1st Number:" ))
+numbers2 = int(input("Enter 2nd Number:"))
+
+if  calculator == "Add":
+    print("Addition of " + str(numbers1) + " and " + str(numbers2) + " = " ,  numbers1  + numbers2   )
+elif calculator == "Sub" :
+    print("subtraction of " + str(numbers1) + " and " + str(numbers2) + " = " ,  numbers1 - numbers2)
+elif calculator == "Multiply":
+    print("multipy of " + str(numbers1) + " and " + str(numbers2) + " = " ,  numbers1 * numbers2)
+elif calculator == "Division":
+    if numbers2 == 0:
+        print ("You cannot divide a number by 0, Retry with correct Numbers")
+    else:
+        print("Division of " + str(numbers1) + " and " + str(numbers2) + " = " ,  numbers1 / numbers2)
+else:
+    print("check the inputs once u typed invalid ")
+O/p:
+o/p:
+What Operation you would like to Perform  (Add/Sub/Multiply/Division) ?Division
+Enter 1st Number:6
+Enter 2nd Number:2
+Division of 6 and 2 =  3.0
+
+
+3. Write a program that calculates the area of a rectangle given its
+length and width, both provided by the user.
+
+
+Solution:
+
+length = int(input("Enter ur length of the rectangle :"))
+breadth=int(input("Enter ur length of the rectangle :"))
+area = length * breadth
+print("The area of the rectangle is: " ,area)
+
+O/p:
+Enter ur length of the rectangle :23
+Enter ur length of the rectangle :50
+The area of the rectangle is:  1150
+
+4. Write a program that takes an integer as input and prints whether
+it's even or odd.
+
+Solution:
+
+num = int(input("Enter ur number to test whether it is Even or Odd: "))
+if (num % 2)==0:
+    print("It is an Even number.")
+else:
+    print("It is an Odd number.")
+	
+O/p:
+Enter ur number to test whether it is Even or Odd: 7
+It is an Odd number.
+
+Enter ur number to test whether it is Even or Odd: 6
+It is an Even number.
