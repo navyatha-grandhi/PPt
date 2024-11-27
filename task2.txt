@@ -1,0 +1,92 @@
+1. Write a program that takes a string as input from the user and prints
+the same string in both uppercase and lowercase. 
+
+solution:
+Name = input("What is ur favorite language? ")
+print("My favorite language is : ",Name.lower())
+print("My favorite language is : ",Name.upper())
+
+O/p:
+
+What is ur favorite language? python
+My favorite language is :  python
+My favorite language is :  PYTHON
+
+2. Write a program that takes a sentence as input and splits it into a
+list of words using the split() method. Then, print each word on a new
+line. 
+
+Solution 1:
+
+Bio = input("My name is Grandhi Lakshmi Navyatha,\nI recently completed my Bachelor's at ISTS Womens engineering college,\nMy hobbies are Learning new things and Explore.")
+print(split(Bio))
+
+O/p:
+
+My name is Grandhi Lakshmi Navyatha,
+I recently completed my Bachelor's at ISTS Womens engineering college,
+My hobbies are Learning new things and Explore.
+                    Or
+	
+Solution 2:
+
+sentence=input("Enter a sentence: ")
+for item in sentence.split(" "):
+    print(item)
+O/p:
+Enter a sentence: My name is Grandhi Lakshmi Navyatha
+My
+name
+is
+Grandhi
+Lakshmi
+Navyatha
+
+3. Write a program that takes a string as input and prints the reversed
+string (without using slicing). 
+
+Solution 1:
+
+name = "navyatha"[::-1]
+print(name)
+
+O/p:
+ahtayvan
+              or
+ Solution 2:		
+ name = "navyatha"
+ rev = ''.join(reversed(name)) 
+ print(rev)
+ O/p:
+ ahtayvan
+		
+4. Write a program that checks if a given string is a palindrome (reads
+the same forwards and backward, ignoring case and nonalphanumeric characters)
+
+Solution 1:
+def isPalindrome(name):
+    return name==name [::-1]
+name= "mom"
+result = isPalindrome(name)
+if result:
+    print("yes")
+else:
+    print("no")
+
+O/p:
+Yes
+
+Solution 2:
+
+
+def isPalindrome(name):
+    return name==name[::-1]
+name = "navyatha"
+result = isPalindrome(name)
+if result:
+    print("yes")
+else:
+    print("no")
+
+O/p:
+no
