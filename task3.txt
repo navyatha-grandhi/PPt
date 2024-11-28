@@ -1,0 +1,140 @@
+
+                                      **Tuple**
+1. Create a tuple containing five different data types (integer, float, string,
+boolean, and a smaller tuple). Access and print each element individually. 
+
+Solution:
+
+details =("Navyatha",20,8.5,True,"America")
+print(details[0])
+print(details[1])
+print(details[2])
+print(details[3])
+print(details[4])
+
+O/p:
+
+Navyatha
+20
+8.5
+True
+America
+
+2. Create two tuples. Concatenate them to create a new tuple and print the
+result. 
+
+Solution 1 :
+
+fruits = ("banana","cherry","apple")
+flowers = ("rose","lilly","jasmine")
+print(fruits+flowers)
+
+O/p:
+('banana', 'cherry', 'apple', 'rose', 'lilly', 'jasmine')
+                 or
+Solution 2:
+fruits = ("banana","cherry","apple")
+flowers = ("rose","lilly","jasmine")
+flowers += fruits
+print(flowers)
+
+O/p:
+('rose', 'lilly', 'jasmine', 'banana', 'cherry', 'apple')
+
+3. Create a tuple with multiple values. Unpack the tuple into individual
+variables and print each variable's value. 
+Solution:
+
+Icecreams =("butterscotch","strawberry","pistha")
+(yellow,red,green)= Icecreams
+print(yellow)
+print(red)
+print(red)
+print(green)
+
+O/p:
+butterscotch
+strawberry
+strawberry
+pistha
+
+4. Create a tuple of numbers. Count how many times a specific number appears
+in the tuple using the count() method.
+
+Solution:
+
+numbers = (1,13,12,14,13,7,9,9)
+number1=numbers.count(13)
+print(number1)
+
+O/p:
+2
+
+                                       **List**
+									   
+1. Create a list containing strings representing the names of five fruits. Access
+and print the second and fourth fruits in the list.
+
+Solution1:
+fruits = ["banana","cherry","apple","orange","pineapple"]
+print(fruits[2],fruits[4])
+
+O/p:
+apple pineapple
+             or
+
+Solution2:	
+		 
+fruits = ["banana","cherry","apple","orange","pineapple"]
+print(fruits[2])
+print(fruits[-1])
+
+O/p:
+apple
+pineapple
+
+2. Create an empty list. Add three numbers to the end of the list using the
+append() method. Then, insert a number at the beginning of the list using the
+insert() method. Print the final list.
+
+Solution:
+
+numbers = []
+
+numbers.append([22,4,55])
+numbers.insert(0,[1,34,13])
+print(numbers)
+
+O/p:
+[[1, 34, 13], [22, 4, 55]]
+
+3. Create a list of numbers. Remove the last element using pop(). Remove the
+element at index 2 using del. Print the modified list. 
+
+Solution:
+
+numbers= [24,13,12,14]
+numbers.pop()
+print(numbers)
+del numbers[2]
+print(numbers)
+modifiednumbers=numbers
+print("modifiednumbers : ",numbers)
+
+O/p:
+
+[24, 13, 12]
+[24, 13]
+modifiednumbers :  [24, 13]
+
+4. Create two lists. Concatenate them into a new list and print the result.
+
+Solution:
+
+friends =["priya","riya","diya"]
+besties = ["laya","ramya","vijju"]
+print("newlist:",friends+besties)
+
+O/p:
+
+newlist: ['priya', 'riya', 'diya', 'laya', 'ramya', 'vijju']
