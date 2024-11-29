@@ -1,0 +1,143 @@
+                        **Set**
+1. Write a Python program to create a set. 
+
+Solution:
+
+friends = {"riya","diya","adhya"}
+print("Friends are:",friends)
+
+O/p:
+Friends are: {'diya', 'riya', 'adhya'}
+
+2. Write a Python program to check if a set is a subset of another set. 
+
+Solution:
+
+fruits ={"apple","banana","cherry","orange"}
+fruits1 = {"apple","orange"}
+print(fruits.issubset(fruits1))
+print(fruits1.issubset(fruits))
+
+O/p:
+
+False
+True
+
+3. Write a Python program to find the maximum and minimum values in a set
+
+Solution:
+
+numbers ={12,14,2000,100}
+print(max(numbers))
+print(min(numbers))
+
+O/p:
+2000
+12
+
+4. Write a Python program to create a shallow copy of sets.
+
+Solution:
+
+friends = {"laya","ramya","viju","yams","maneesha"}
+family=friends.copy()
+print(family)
+
+O/p:
+{'laya', 'ramya', 'viju', 'maneesha', 'yams'}
+
+                                      **Dictionary**
+
+1. Write a Python script to sort (ascending and descending) a dictionary by
+value. 									  
+
+Solution:
+
+subjects ={"maths":70,"physics":50,"chemistry":90}
+print(sorted(subjects.values()))
+O/p:
+[50, 70, 90]
+
+2. Write a Python script to merge two Python dictionaries
+
+Solution:
+
+details={"navyatha":20,"laya":23,"ramya":26}
+details1={"diya":29,"riya":34}
+details.update(details1)
+print(details)
+
+O/p:
+
+{'navyatha': 20, 'laya': 23, 'ramya': 26, 'diya': 29, 'riya': 34}
+
+3. Write a Python program to map two lists into a dictionary. 
+
+Solution:
+names = ["layaaa", "navyaa", "ramyaaa"]
+rollnum = [1, 4, 5]
+
+
+print("Original key list is : " + str(names))
+print("Original value list is : " + str(rollnum))
+
+res = {names[i]: rollnum[i] for i in range(len(names))}
+
+print("Resultant dictionary is : " + str(res))
+
+
+
+O/p:
+
+Original key list is : ['layaaa', 'navyaa', 'ramyaaa']
+Original value list is : [1, 4, 5]
+Resultant dictionary is : {'layaaa': 1, 'navyaa': 4, 'ramyaaa': 5}
+
+4. Create a contact list using a dictionary where the keys are names, and the
+values are phone numbers. Write a program to add, update, and delete contacts
+
+Solution:
+
+friends={"laya":7428048067,"ramya":6732091165,"diya":9919046588}
+print(friends)
+friends ["laya"]=8879995632
+print("updated dictionary =\n",friends)
+
+ramya=friends.pop('ramya')
+print("delete the dictionary=\n",friends)
+
+friends ["navya"]=9981014366
+print("adding  dictionary=\n",friends)
+
+O/p:
+
+{'laya': 7428048067, 'ramya': 6732091165, 'diya': 9919046588}
+updated dictionary =
+ {'laya': 8879995632, 'ramya': 6732091165, 'diya': 9919046588}
+delete the dictionary=
+ {'laya': 8879995632, 'diya': 9919046588}
+adding  dictionary=
+ {'laya': 8879995632, 'diya': 9919046588, 'navya': 9981014366}
+
+
+5. Create a dictionary with employee IDs as keys and their names as values.
+Write a program to add new employees, delete employees, and search for
+employees by ID
+
+Solution:
+
+details ={201 :"riya",202:"diya",203:"priya"}
+details.update({204 : "adhya"})
+details.pop(201)
+print("deleted emoloyee:",details)
+print("added newemployee:",details)
+if 202 in details:
+    print("the key is exists.")
+else:
+    print("sorry once check and recheck.")
+O/p:
+
+deleted emoloyee: {202: 'diya', 203: 'priya', 204: 'adhya'}
+added newemployee: {202: 'diya', 203: 'priya', 204: 'adhya'}
+the key is exists.
+
