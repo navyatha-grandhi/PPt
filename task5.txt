@@ -1,0 +1,109 @@
+                     **If elif else statements**
+					 
+1. Write a program to check if a number entered by the user is odd or even.
+
+Solution:
+
+number = int(input("Enter ur number to check odd or even: "))
+if (number % 2)==0:
+    print("even num")
+else:
+    print("odd num")
+
+O/p:
+
+Enter ur number to check odd or even: 67
+odd num
+
+2. Write a program to find the largest of three numbers entered by the user.
+
+Solution:
+
+num1 = int(input("Enter ur num1:"))
+num2 = int(input("Enter ur num2:"))
+num3 = int(input("Enter ur num3:"))
+if (num1>=num2) and (num1 >= num3):
+    print("num1 largest num")
+elif (num2>=num1) and (num2>=num3):
+    print("num2 largest num")
+else:
+    print("num3 largest num")
+    
+O/p:
+
+Enter ur num1:34
+Enter ur num2:56
+Enter ur num3:78
+num3 largest num
+
+3. Write a program that takes a number (1–7) as input and prints the
+corresponding day of the week. Use if-elif-else statements. 
+
+Solution3:
+
+num = int(input("Enter ur number:"))
+if num == 1:
+    print("Monday")
+elif num == 2:
+    print("Tuesday")
+elif num==3:
+    print("Wednesday")
+elif num==4:
+    print("Thursday")
+elif num==5:
+    print("Friday")
+elif num==6:
+    print("Saturday")
+elif num==7:
+    print("Sunday")
+else:
+    print("Check it Once and enter ur number again! ")
+
+O/p:
+
+Enter ur number:5
+Friday
+
+4. Write a program to check whether a given character is:
+i. a vowel
+ii. a consonant
+iii. a digit
+iv. a special character
+
+Solution:
+
+def countCharacterType(str): 
+    vowels = 0
+    consonant = 0
+    specialChar = 0
+    digit = 0
+    for i in range(0, len(str)):  
+        ch = str[i]  
+        if ( (ch >= 'a' and ch <= 'z') or 
+             (ch >= 'A' and ch <= 'Z') ):  
+            ch = ch.lower() 
+            if (ch == 'a' or ch == 'e' or ch == 'i' 
+                        or ch == 'o' or ch == 'u'): 
+                vowels += 1
+            else: 
+                consonant += 1
+          
+        elif (ch >= '0' and ch <= '9'): 
+            digit += 1
+        else: 
+            specialChar += 1
+      
+    print("Vowels:", vowels) 
+    print("Consonant:", consonant)  
+    print("Digit:", digit)  
+    print("Special Character:", specialChar)  
+str = "Hello busy people @ 2024"
+countCharacterType(str)         
+     
+O/p:
+
+Vowels: 6
+Consonant: 9
+Digit: 4
+Special Character: 5
+
