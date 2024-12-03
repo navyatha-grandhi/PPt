@@ -1,0 +1,178 @@
+                                               ** For Loop **
+								
+1. Write a program to print numbers from 1 to 10 using a for loop. 
+
+Solution:
+
+numbers = 0
+for numbers in range(1,11):
+    print(numbers)
+	
+O/p:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+2. Write a program that checks if a given number is a prime number. 
+
+Solution:
+
+num = 7
+if num > 1:
+    for i in range(2, (num//2)+1):
+        if (num % i) == 0:
+            print(num, "is not a prime number")
+            break
+    else:
+        print(num, "is a prime number")
+		
+O/p:
+
+7 is a prime number
+
+3. Write a program to create a list of squares of numbers from 1 to n.
+
+Solution:
+
+N = 6
+squares_list = [i*i for i in range(1, N+1)]
+sum_of_squares = sum(squares_list)
+print("Sum of squares of first", N, "natural numbers is", sum_of_squares)
+
+O/p:
+
+Sum of squares of first 6 natural numbers is 91
+
+4. Write a program to print the following pattern:
+*
+**
+***
+****
+*****
+
+Solution:
+
+rows = 5
+for i in range(1,rows+1):
+    for j in range(1,i+1):
+        print("*",end="")
+    print()
+	
+O/p:
+
+*
+**
+***
+****
+*****
+
+                                            ** While Loop**
+										
+1. Write a program to calculate the sum of all numbers from 1 to n (user input)
+using a while loop. 
+
+Solution:
+
+def sum_of_natural_numbers(N):
+    total = 0
+    count = 1
+    while count <= N:
+        total += count
+        count += 1
+
+    return total
+
+N = 2
+
+result = sum_of_natural_numbers(N)
+
+print("The Sum of the First", N, "Natural Numbers is:", result)
+	
+O/p:
+
+The Sum of the First 2 Natural Numbers is: 3
+
+2. Print all even numbers between 1 and 20 using a while loop. 
+
+Solution:
+
+num =int(input("Enter ur number: "))
+i = 2
+while(num >= i):
+    print(i)
+    i=i+2
+O/p:
+
+Enter ur number: 20
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+
+3. Create a number-guessing game where the program picks a random number,
+and the user keeps guessing until they get it right. Provide feedback if the guess
+is too high or low. 
+
+Solution:
+
+import random
+c_guess = random.randint(1,4)
+u_guess = int(input("Enter a guess: "))
+while u_guess != c_guess:
+    if u_guess < c_guess:
+        print("too low.")
+        u_guess = int(input("Enter a guess again: "))
+    elif u_guess > c_guess:
+        print("too high.")
+    
+    else:
+        break
+        print("u guessed it right")
+    if u_guess == c_guess:
+        print("congratzzzzz")
+    else:
+        print("sorryyy")
+		
+O/p:
+
+Enter a guess: 1
+too low.
+Enter a guess again: 1
+sorryyy
+too low.
+Enter a guess again: 4
+congratzzzzz
+
+4. Write a program to check if a number is a palindrome using a while loop.
+
+Solution:
+
+i = int(input("Enter number: "))
+rev = 0
+x = i
+while(i>0):
+    rev= (rev*10)+i%10
+    i=i//10
+if(x==rev):
+    print("x is palindrome.")
+else:
+    print(" x is not palindrome.")
+	
+O/p:
+
+Enter number: 232
+x is palindrome.
