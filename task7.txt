@@ -1,0 +1,138 @@
+                               ** Functions**
+							   
+1. Write a function greet(name) that takes a name as input and prints a greeting
+message: "Hello, {name}!". 
+
+Solution:
+
+def greet(name):
+    print("Hello",name)
+greet("Navyatha")
+
+O/p:
+
+Hello Navyatha
+
+2. Write a function circle_area(radius) that calculates the area of a circle given
+the radius.
+
+Solution:
+
+from math import pi
+r = float(input("Input the radius of the circle : "))
+area = pi * r ** 2
+print("The area of the circle with radius " + str(r) + " is: " + str(area))
+
+O/p:
+
+Input the radius of the circle : 13
+The area of the circle with radius 13.0 is: 530.929158456675
+
+3. Write a function fibonacci(n) that returns the first n numbers of the Fibonacci
+sequence. 
+
+Solution:
+
+# Write Python 3 code in this online editor and run it.
+def fibonacci(n):
+    if n<=0:
+        print("incorrect")
+    elif n== 1:
+        return 0
+    elif n==2:
+        return 1
+    else:
+        return fibonacci(n-1)+fibonacci(n-2)
+print(fibonacci(9))
+        
+
+O/p:
+
+21
+
+
+4. Write a function min_of_three(a, b, c) that returns the smallest of three
+numbers.
+
+Solution:
+
+a=13
+b=23
+c=45
+min_value = min(a,b,c)
+print(f"The smallest number is : {min_value}")
+
+O/p:
+13
+
+                                       **Standard Libraries **
+									   
+1. Write a function generate_random_numbers(n, start, end) that generates n
+random integers between a specified start and end range and returns them in a
+list.
+
+Solution:
+
+
+import random
+    
+num = 10
+start = 20
+end = 40
+res = []
+
+for j in range(num):
+    res.append(random.randint(start, end))
+print(res)
+
+O/p:
+
+[33, 21, 28, 28, 36, 23, 23, 31, 26, 34]
+
+2. Write a function calculate_square_roots(numbers) that takes a list of numbers
+and returns a list of their square roots using the math library.
+
+Solution:
+
+import math 
+print(math.sqrt(9)) 
+print(math.sqrt(4)) 
+print(math.sqrt(3))
+
+O/p:
+
+3.0
+2.0
+1.7320508075688772
+
+
+3. Write a function current_date_time() that returns the current date and time in
+the format YYYY-MM-DD HH:MM:SS using the datetime library.
+
+Solution:
+
+from datetime import datetime
+import pytz
+tz_india = pytz.timezone('Asia/Kolkata')
+datetime_india = datetime.now(tz_india)
+print("India Time:", datetime_india.strftime("%Y-%m-%d %H:%M:%S"))
+
+O/p:
+
+India Time: 2024-12-04 14:24:07
+
+4. Write a function list_files_in_directory(path) that takes a directory path as
+input and returns a list of all files in that directory using the os library.
+
+Solution:
+
+import os
+
+dir = "C://Users//Laksh//Downloads"
+os_list = os.listdir(dir)
+print(os_list)
+
+O/p:
+
+C:\Users\Laksh\PycharmProjects\day17-start\pythonProject1\.venv\Scripts\python.exe C:\Users\Laksh\AppData\Roaming\JetBrains\PyCharmCE2024.2\scratches\scratch_6.py 
+['#Donotforgettolike #thanks✨💗.jpg', '1-1 memo.jpg', '1-1 memo.pdf', '1-2 memo (2).jpg', '1-2 memo.jpg', '1-2 memo.pdf', '100+Days+of+Python+Check+Off+Posters.pdf', '100DaysOfCode-v4.0.zip', '12+Rules+to+Learn+to+Code+eBook-Copyright+App+Brewery.pdf', '1676859033886.jpg', '2-1 memo (1).pdf', '2-1 memo.jpg', '2-1 memo.pdf', '2-2 memo.jpg', '2-2 memo.pdf', '206W1A4301.pdf', '206W1A4324.pdf', '25-11-24 practice.txt', '3-1 memo.jpg', '3-1 memo.pdf', '3-2memo.jpg', '3-2memo.pdf', '4-1memo.jpg', '4-2 memo.jpg', '6764b9fb2a5fdc108760e264a2b7a3fc.mp4', '682f6cea-0701-494a-b552-654536268c94.jpg', '840ff1f7512c87ef05fc2687ad0c2c79.mp4', '94a77d6a-8ee4-4b30-870b-0b6a061ad9a9_1.pdf', 'Admit Card.pdf', 'Application_form_HCLTFP801712.pdf', 'b - Copy.pdf', 'B.TECH4-1MEMO.pdf', 'Batch -19 Documentation.pdf', 'Batch-10 ppt.pptx', 'Batch-10ppt.pdf', 'CERTIFICATES', 'ChromeSetup (1).exe', 'ChromeSetup.exe', 'Coding+Notebook+Sheets+to+Print.pdf', 'Coffee+Machine+Program+Requirements.pdf', 'Course+Pledge+-+App+Brewery+100+Days+of+Python.pdf', 'desktop.ini', 'Docker Desktop Installer.exe', 'Documents - Shortcut.lnk', 'download (1).jpg', 'download (2).jpg', 'download (3).jpg', 'download.jpg', 'DreamWorks Movies Posters 😍.jpg', 'DT20245297843_Application.pdf', 'file.pdf', 'final ppt project.pptx', 'FINAL PPT.pptx', 'flutter_windows_3.19.3-stable', 'flutter_windows_3.19.3-stable.zip', 'harshi resume net enrich.docx', 'harshi resume net enrich.pdf', 'id_card.jpg', 'Ig August birthday story.jpg', 'images.jpg', 'INTRODUCTION TO PYTHON 2.pptx', 'invite.ics', 'iPhone wallpaper.jpg', 'jetbrains-toolbox-2.4.2.32922 (1).exe', 'jetbrains-toolbox-2.4.2.32922.exe', 'Maheera Pre Birthday.mp4', 'MHT (1)-1.pdf', 'Movie Download Free App For Android.jpg', 'MSB.exe', 'mysql-connector-j-8.3.0', 'mysql-connector-j-8.3.0.zip', 'mysql-installer-web-community-8.0.36.0.msi', 'navyatha aws.pdf', 'NAVYATHA DOCUMENT.pdf', 'Navyatha Grandhi (1).pdf', 'Navyatha Grandhi resume.docx', 'Navyatha Grandhi resume.pdf', 'Navyatha Grandhi.pdf', 'Navyatha Kodnest Document', 'Navyatha Kodnest Document.zip', 'NAVYATHA RESUME (1).docx', 'NAVYATHA RESUME.docx', 'NAVYATHA RESUME.pdf', 'Netflix Extension Lets Users Chat with Friends While Watching During Coronavirus Distancing.jpg', 'Netflix intro animation - Pure CSS.jpg', 'New folder', 'npp.8.6.7.Installer.x64.exe', 'Offer Letter  - Lakshmi Navyatha Grandhi - 028 - PD.docx', 'Offer Letter  - Lakshmi Navyatha Grandhi - 028 - PD.pdf', 'offer_letter Kodnest.pdf', 'oop-coffee-machine-start', 'oop-coffee-machine-start.zip', 'oops1.py', 'Power Reviews Foundation BFSI Program PPT.pptx', 'Python 10.pptx', 'python 11.pptx', 'Python 12.pptx', 'Python 17.pptx', 'Python 18.pptx', 'python 2.txt', 'Python 4.pptx', 'Python 5.pptx', 'Python 6.pptx', 'Python 7.pptx', 'Python 9.1.pptx', 'Python ppt3.pptx', 'Python+Syntax+Cheat+Sheet+Booklet+v2.pdf', 'python-3.12.5-amd64.exe', 'Python13.pptx', 'Python14.pptx', 'Python15.pptx', 'Python16.pptx', 'Python8.pptx', 'quiz-game-start', 'quiz-game-start.zip', 'Reeborg+World+Tests.zip', 'restoran-1.0.0.zip', 'sabtool_win8_10_11_v170530', 'sabtool_win8_10_11_v170530.zip', 'shortcut keys.jpg', 'songs', 'SSC.jpg', 'SSC.pdf', 'Syllabus+for+100+Days+of+Python.pdf', 'task', 'task 6.txt', 'task2.txt', 'task3.txt', 'task4.txt', 'task5.txt', 'task7.txt', "TCS Interview Invite - TCS NQT FY'2024.eml", 'TeamsSetupx64_s_8DC591F7E5274F9-1-0_c_w_.exe', 'The Conjuring Universe.jpg', 'thonny-4.1.4.exe', 'Treasure+Island+Flowchart+(pdf).pdf', 'Wallpapers.zip', 'wepik-minimalist-business-slides-presentation-20240326094732zVpI.pptx']
