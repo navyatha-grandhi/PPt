@@ -1,0 +1,132 @@
+                       **Lambda Function, map(), filter(), reduce() **
+					   
+1. Write a lambda function that takes two numbers as arguments and returns
+their sum. 
+
+Solution:
+
+num = lambda x : x + 10
+print(num(5))
+
+O/p:
+15
+
+2. Write a lambda function that returns the maximum of two numbers.
+
+Solution:
+
+maximum = lambda x, y: x if x > y else y
+result = maximum(8, 17)
+print(result)
+
+O/p:
+17
+
+3. Write a program that uses map() and a lambda function to capitalize all words
+in a list of strings.
+
+Solution:
+
+name = ["my name is navyatha"]
+cap =map(lambda x: str.upper(x),name)
+print(list(cap))
+
+O/p:
+
+['MY NAME IS NAVYATHA']
+
+4. Use map() with a lambda function to multiply each element of a list by 10.
+
+Solution:
+
+nums = [2, 4, 6, 9, 11,13,12]
+n=10
+print("Original list: ", nums)
+print("Given number: ", n)
+filtered_numbers = list(map(lambda number: number * n, nums))
+print("Result:")
+print(' '.join(map(str, filtered_numbers))) 
+
+O/p:
+
+Original list:  [2, 4, 6, 9, 11, 13, 12]
+Given number:  10
+Result:
+20 40 60 90 110 130 120
+
+5. Write a program that uses filter() with a lambda function to extract all
+positive numbers from a list.
+
+Solution:
+
+numbers = [1,6,-9,-5,6]
+filtered_numbers=list(filter(lambda x: x>=0, numbers))
+print(f"The filtered numbers are: {filtered_numbers}")
+
+O/p:
+
+The filtered numbers are: [1, 6, 6]
+
+6. Write a program that uses filter() and a lambda function to get numbers
+divisible by 5 from a list of integers. 
+
+Solution:
+
+my_list = [25,90,67,44,32,80,60 ]
+result = list(filter(lambda x: (x % 5 == 0), my_list)) 
+print(result) 
+
+O/p:
+
+[25, 90, 80, 60]
+
+7. Write a program that uses reduce() and a lambda function to find the sum of
+all elements in a list
+
+Solution:
+
+import functools
+values=[10,89,70]
+def add(a,b):
+    return a+b
+print(functools.reduce(lambda a,b: a+b, values))
+
+O/p:
+
+169
+
+8. Use reduce() with a lambda function to find the greatest common divisor
+(GCD) of a list of numbers. 
+
+Solution:
+
+import numpy as np
+
+GCD = [12, 24, 27, 30, 36]
+
+print(np.gcd.reduce(GCD))
+
+O/p:
+3
+
+9. Write a program that uses both map() and filter() to first square all the
+numbers in a list and then filter out numbers greater than 50. 
+
+Solution:
+
+num=list(map(lambda x:x**2,[1,2,3,4,5,6,9]))
+num1 = list(filter(lambda x: x>=50,num))
+print(num)
+print(num1)
+
+O/p:
+
+[1, 4, 9, 16, 25, 36, 81]
+[81]
+
+10. Use map() to convert a list of strings into a list of their lengths and then use
+reduce() to find the total length of all strings combined.
+
+Solution:
+
+
