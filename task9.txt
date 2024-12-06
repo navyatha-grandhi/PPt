@@ -1,0 +1,228 @@
+                                     **Regular Expression**
+									 
+1. Write a regex to match any word that starts with a capital letter. 
+
+Solution:
+
+	
+import re
+pattern = r'\b[A-Z][a-zA-Z]*\b'
+text = "Here are some Words, including Apple, Banana, and Cherry."
+matches = re.findall(pattern, text)
+print(matches)
+
+O/p:
+
+['Here', 'Words', 'Apple', 'Banana', 'Cherry']
+
+2. Validate if a given string contains only alphabets and is at least 5 characters
+long.
+
+Solution:
+
+def validate_string(s):
+    return s.isalpha() and len(s) >= 5
+test_strings = ["Hello", "team123", "Hey", "Python!", "Navya"]
+
+for string in test_strings:
+    result = validate_string(string)
+    print(f"'{string}' is valid: {result}")
+	
+O/p:
+
+'Hello' is valid: True
+'team123' is valid: False
+'Hey' is valid: False
+'Python!' is valid: False
+'Navya' is valid: True
+
+
+3. Create a regex to identify all valid URLs in a text. 
+
+Solution:
+
+import re
+
+def find_urls(text):
+    url_pattern = r'https?://[^\s]+|www\.[^\s]+'
+    return re.findall(url_pattern, text)
+sample_text = """
+Visit our site at https://www.example.com or http://example.org for more details. 
+"""
+found_urls = find_urls(sample_text)
+print("Valid URLs found:", found_urls)
+
+O/p:
+Valid URLs found: ['https://www.example.com', 'http://example.org']
+
+4. Validate time in the 24-hour format (e.g., 14:30 or 23:59).
+
+Solution:
+
+import re
+def validate_time(time_str):
+    time_pattern = r'^([01]\d|2[0-3]):([0-5]\d)$'
+    return bool(re.match(time_pattern, time_str))
+sample_times = ["14:30", "23:59", "00:00", "12:45", "24:06", "12:78", "09:01"]
+for time in sample_times:
+    is_valid = validate_time(time)
+    print(f"{time} is valid: {is_valid}")
+	
+O/p:
+
+14:30 is valid: True
+23:59 is valid: True
+00:00 is valid: True
+12:45 is valid: True
+24:06 is valid: False
+12:78 is valid: False
+09:01 is valid: True
+
+5. Write a regex to validate IPv4 addresses (e.g., 192.168.1.1)
+
+Solution:
+
+import re
+
+def validate_ipv4(ip_str):
+    ipv4_pattern = r'^((25[0-5]|2[0-4][0-9]|1[0-9][0-9]?|[1-9]?[0-9])\.){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]?|[1-9]?[0-9])$'
+    return bool(re.match(ipv4_pattern, ip_str))
+sample_ips = ["192.168.1.1", "255.255.255.255", "0.0.0.0", "256.100.50.25", "192.168.1", "192.168.1.256", "abc.def.ghi.jkl"]
+for ip in sample_ips:
+    is_valid = validate_ipv4(ip)
+    print(f"{ip} is valid: {is_valid}")
+	
+O/p:
+
+192.168.1.1 is valid: True
+255.255.255.255 is valid: True
+0.0.0.0 is valid: True
+256.100.50.25 is valid: False
+192.168.1 is valid: False
+192.168.1.256 is valid: False
+abc.def.ghi.jkl is valid: False
+
+6. Write a regex pattern to validate email addresses (e.g.,
+example@example.com).
+
+Solution:
+
+import re
+
+def is_valid_email(email):
+    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    if re.match(pattern, email):
+        return True
+    else:
+        return False
+email = "example@example.com"
+if is_valid_email(email):
+    print(f"{email} is a valid email address.")
+else:
+    print(f"{email} is not a valid email address.")        
+	
+O/p:
+
+example@example.com is a valid email address.
+
+                                       **Exceptions handling**
+									 
+1. Write a program that takes two numbers as input and divides the first by the
+second. Use a try-except block to handle the case when the second number is
+zero. 
+
+Solution:
+
+def divide_numbers():
+    try:
+        num1 = float(input("Enter the first number: "))
+        num2 = float(input("Enter the second number: "))
+        result = num1 / num2
+        print(f"The result of {num1} divided by {num2} is: {result}")
+    
+    except ZeroDivisionError:
+        print("Error: Cannot divide by zero. Please enter a non-zero second number.")
+    except ValueError:
+        print("Error: Please enter valid numbers.")  
+divide_numbers()
+
+O/p:
+
+Enter the first number: 12
+Enter the second number: 6
+The result of 12.0 divided by 6.0 is: 2.0
+
+2. Write a program that concatenates two strings. Use try-except to handle cases
+where the user mistakenly provides non-string inputs. 
+
+Solution:
+
+def concatenate_strings():
+    try:
+        str1 = input("Enter the first string: ")
+        str2 = input("Enter the second string: ")
+        if not isinstance(str1, str) or not isinstance(str2, str):
+            raise ValueError("Both inputs must be strings.")
+        result = str1 + str2
+        print(f"The concatenated result is: {result}")
+    except ValueError as e:
+        print(f"Error: {e}")
+concatenate_strings()
+
+O/p:
+
+Enter the first string: hello
+Enter the second string: ppl
+The concatenated result is: helloppl
+
+3. Create a program that asks the user to enter a positive integer. Use try-except
+to handle invalid input and negative numbers. 
+
+Solution:
+
+def userInput():
+    while True:
+        try:
+            n = input("How many times do you want to roll the dice? ")
+            n = int(n)
+            if n < 0:
+                print("Please enter a positive integer")
+            else:
+                return n 
+        except ValueError as ex:
+            print(f"Hey, {n} is not a valid integer!")
+userInput()
+
+O/p:
+
+How many times do you want to roll the dice? -7
+Please enter a positive integer
+How many times do you want to roll the dice? 5
+
+4. Create a program that raises a custom exception if a user tries to withdraw
+more money than is available in their account balance.
+
+solution:
+
+class InsufficientFundsError(Exception):
+    pass
+
+class BankAccount:
+    def __init__(self, balance):
+        self.balance = balance
+    def withdraw(self, amount):
+        if amount > self.balance:
+            raise InsufficientFundsError("Not enough balance to withdraw.")
+        self.balance -= amount
+        return self.balance
+account = BankAccount(balance=100.00)
+try:
+    account.withdraw(1500.00) 
+except InsufficientFundsError as e:
+    print(f"Error: {e}")
+	
+O/p:
+
+ERROR!
+Error: Not enough balance to withdraw.
+
