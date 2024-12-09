@@ -1,0 +1,123 @@
+                                **Class and Object**
+								
+Ex1:
+
+class Dog:
+    def __init__(self, name):
+        self.name = name
+
+    def bark(self):
+        return f"{self.name} says Woof!"
+my_dog = Dog("Buddy")
+print(my_dog.bark())
+ 
+O/p:
+Buddy says Woof!
+
+Ex2:
+
+class Student:
+    def __init__(self,rollnum,branch,name):
+        self.rollnum = rollnum
+        self.branch = branch
+        self.name = name
+    def details_info(self):
+        return f"{self.rollnum} {self.branch} {self.name}"
+my_student = Student(24 , "AI", "Navyatha")
+print(my_student.details_info())
+
+O/p:
+
+24 AI Navyatha
+ 
+Ex3:
+
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+        
+    def area(self):
+        return self.width * self.height
+my_rectangle = Rectangle(4, 5)
+print(f"The area of the rectangle is {my_rectangle.area()}") 
+
+O/p:
+The area of the rectangle is 20
+
+Ex4:
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        
+    def greet(self):
+        print(f"Hello, my name is {self.name} and I am {self.age} years old.")
+person1 = Person("priya" ,30)
+person1.greet()  
+
+O/p:
+
+Hello, my name is priya and I am 30 years old.
+
+Ex5:
+
+class BankAccount:
+    def __init__(self, balance=0):
+        self.balance = balance  
+    def deposit(self, amount):
+        if amount > 0:
+            self.balance += amount
+    def get_balance(self):
+        return self.balance
+account = BankAccount(1000)
+account.deposit(2000)
+print(account.get_balance()) 
+
+O/p:
+
+3000
+
+Ex6:
+
+class Father:
+    def sleep(self):
+        print("Sleeps from 10:00pm to 5:00Am")          #super or parentclass=Father 
+    def eat(self):
+        print("Eating...")                              # Sub or childclass = Son
+class Son(Father):
+    def sleep(self):
+        print("Sleeps fromm 2:00Am to 10:00Am")
+        super().sleep()
+Ram= Son()
+Ram.sleep()
+
+O/p:
+
+Sleeps fromm 2:00Am to 10:00Am
+Sleeps from 10:00pm to 5:00Am
+
+Ex7:
+
+
+class Person:
+    def __init__(self):
+        self.name="Navyatha"
+        self.age=25
+        self.gender="female"
+    def talk(self):
+        print("Hi i'm ", self.name)
+    def vote(self):
+        if self.age<18:
+            print("Not eligible to vote.")
+        else:
+            print("eligible to vote.")
+my_obj = Person()
+Person.talk(my_obj)
+Person.vote(my_obj)
+
+O/p:
+
+Hi i'm  Navyatha
+eligible to vote.
