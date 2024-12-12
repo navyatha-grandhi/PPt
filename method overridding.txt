@@ -1,0 +1,132 @@
+                               **Method Overridding**
+
+Ex1:
+
+class Parent: 
+   def myMethod(self):
+      print ('Calling parent method')
+
+# define child class
+class Child(Parent): 
+   def myMethod(self):
+      print ('Calling child method')
+
+# instance of child
+c = Child() 
+# child calls overridden method
+c.myMethod()
+
+O/p:
+
+Calling child method
+  
+  
+ Ex2:
+class Emp():
+    def __init__(self, id, name, Add):
+        self.id = id
+        self.name = name
+        self.Add = Add
+
+# Class freelancer inherits EMP
+class Details(Emp):
+    def __init__(self, id, name, Add, Emails):
+        super().__init__(id, name, Add)
+        self.Emails = Emails
+
+Emp_1 = Details(24, "Navyatha", "Rajmundry" , "navya@gmail")
+print('The ID is:', Emp_1.id)
+print('The Name is:', Emp_1.name)
+print('The Address is:', Emp_1.Add)
+print('The Emails is:', Emp_1.Emails)
+
+O/p:
+
+The ID is: 24
+The Name is: Navyatha
+The Address is: Rajmundry
+The Emails is: navya@gmail
+
+Ex3:
+
+class Animals:
+    def __init__(self):
+        self.legs = 4
+        self.domestic = True
+        self.tail = True
+        self.mammals = True
+    def isMammal(self):
+        if self.mammals:
+            print("It is a mammal.")
+    def isDomestic(self):
+        if self.domestic:
+            print("It is a domestic animal.")
+class Dogs(Animals):
+    def __init__(self):
+        super().__init__()
+
+    def isMammal(self):
+        super().isMammal()
+class Horses(Animals):
+    def __init__(self):
+        super().__init__()
+    def hasTailandLegs(self):
+        if self.tail and self.legs == 4:
+            print("Has legs and tail")
+Tom = Dogs()
+Tom.isMammal()
+Bruno = Horses()
+Bruno.hasTailandLegs()
+
+O/p:
+
+It is a mammal.
+Has legs and tail
+
+Ex 4:
+
+class Mammal():
+    def __init__(self, name):
+        print(name, "Is a mammal")
+class canFly(Mammal):
+    def __init__(self, canFly_name):
+        print(canFly_name, "cannot fly")
+        super().__init__(canFly_name)
+class canSwim(Mammal):
+    def __init__(self, canSwim_name):
+        print(canSwim_name, "cannot swim")
+        super().__init__(canSwim_name)
+class Animal(canFly, canSwim):
+    def __init__(self, name):
+        super().__init__(name)
+Carol = Animal("Dog")
+
+O/p:
+
+Dog cannot fly
+Dog cannot swim
+Dog Is a mammal
+
+
+  Note: Super() Returns a Proxy object represents the Parent's class.
+  
+  
+ Ex5:
+ 
+class Animal:
+    def sound(self):
+        print("The animal makes a sound.")
+
+class Dog(Animal):
+    def sound(self):
+        super().sound()  # Call the sound method of the Animal class
+        print("The dog barks.")
+
+my_dog = Dog()
+my_dog.sound() 
+
+O/p:
+
+The animal makes a sound.
+The dog barks.
+
