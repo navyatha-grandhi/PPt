@@ -1,0 +1,80 @@
+                    ** Access Modifiers**
+					
+In Python, access modifiers are used to set the visibility of class members.
+There are three main types of access modifers:
+Public
+Private
+Protected
+
+Public:  Public members are accessible from outside the Class.
+
+Ex:
+
+class MyClass:
+    def __init__(self):
+        self.public_attribute = "I am public"
+
+    def public_method(self):
+        return "This is a public method"
+
+# Usage
+obj = MyClass()
+print(obj.public_attribute)  # Accessible
+print(obj.public_method())    # Accessible
+
+O/p:
+
+I am public
+This is a public method
+
+
+Private : Private members are intended to be accessible only within the class they are defined.
+they are indicated by a double underscore __ Prefix.
+Ex:
+
+class MyClass:
+    def __init__(self):
+        self.__private_attribute = "I am private"
+
+    def __private_method(self):
+        return "This is a private method"
+
+    def access_private(self):
+        return self.__private_attribute  # Accessible within the class
+
+obj = MyClass()
+print(obj.access_private()) 
+
+O/p:
+
+I am private
+
+Protected: Protected members are intended to be accessible within the class and its subclasses,
+but not from outside the class hierarchy.
+
+Ex:
+
+class MyClass:
+    def __init__(self):
+        self._protected_attribute = "I am protected"
+
+    def _protected_method(self):
+        return "This is a protected method"
+
+class SubClass(MyClass):
+    def access_protected(self):
+        return self._protected_attribute  # Accessible in subclass
+
+# Usage
+obj = SubClass()
+print(obj.access_protected())
+
+O/p:
+
+I am protected
+
+
+
+
+
+            
