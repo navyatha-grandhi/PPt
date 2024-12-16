@@ -1,0 +1,180 @@
+                               **Inheritance**
+			
+			
+1. Create a class Animal with a method make_sound() that prints ""Animal
+makes a sound"". Create a subclass Dog that inherits from Animal and has an
+additional method bark() which prints ""Dog barks"". Instantiate an object of
+Dog and call both methods. 
+
+Solution:
+
+class Animal:
+    def make_sound(self):
+        print("Animal makes a sound")
+
+class Dog(Animal):
+    def bark(self):
+        print("Dog barks")
+my_dog = Dog()
+my_dog.make_sound()  # Calls the method from Animal
+my_dog.bark()        # Calls the method from Dog
+
+O/p:
+
+Animal makes a sound
+Dog barks
+
+
+2. Create a Person class with attributes name and age, and methods get_name()
+and get_age(). Then, create an Employee class that inherits from Person and
+adds additional attributes like employee_id and department. Instantiate an object
+of Employee and display all attributes.
+
+Solution:
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def get_name(self):
+        return self.name
+    def get_age(self):
+        return self.age
+class Employee(Person):
+    def __init__(self, name, age, employee_id, department):
+        super().__init__(name, age)  
+        self.employee_id = employee_id
+        self.department = department
+employee = Employee("Navyatha Grandhi", 23, "206W1A4324", " Engineering ")
+print("Name:", employee.get_name())
+print("Age:", employee.get_age())
+print("Employee ID:", employee.employee_id)
+print("Department:", employee.department)
+
+O/p:
+
+Name: Navyatha Grandhi
+Age: 23
+Employee ID: 206W1A4324
+Department:  Engineering 
+
+3. Create a class Animal with a method eat(), a subclass Mammal that inherits
+from Animal and adds the method feed_milk(), and a subclass Dog that inherits
+from Mammal and adds a method bark(). Create an object of Dog and
+demonstrate calling methods from all the levels of inheritance.
+
+Solution:
+
+class Animal:
+    def eat(self):
+        print("Animal eats")
+class Mammal(Animal):
+    def feed_milk(self):
+        print("Mammal feeds milk")
+class Dog(Mammal):
+    def bark(self):
+        print("Dog barks")
+my_dog = Dog()
+my_dog.eat()        # Method from Animal
+my_dog.feed_milk()  # Method from Mammal
+my_dog.bark()       # Method from Dog
+
+O/p:
+
+Animal eats
+Mammal feeds milk
+Dog barks
+
+4. Create a Shape class with a method draw(). Create two subclasses Circle and
+Rectangle that both inherit from Shape and implement their own area()
+methods. Instantiate objects of both Circle and Rectangle and call their
+respective methods.
+
+Solution:
+
+import math
+class Shape:
+    def draw(self):
+        print("Drawing a shape.")
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+    def area(self):
+        return math.pi * (self.radius ** 2)
+    def draw(self):
+        super().draw()
+        print("Drawing a circle.")
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+    def area(self):
+        return self.width * self.height
+    def draw(self):
+        super().draw()
+        print("Drawing a rectangle.")
+circle = Circle(radius=5)
+rectangle = Rectangle(width=4, height=6)
+circle.draw()    
+print("Circle area:", circle.area())  
+rectangle.draw()      
+print("Rectangle area:", rectangle.area())  
+
+O/p:
+
+Drawing a shape.
+Drawing a circle.
+Circle area: 78.53981633974483
+Drawing a shape.
+Drawing a rectangle.
+Rectangle area: 24
+
+5. Create a Base class with a method greet(), a Derived class that inherits from
+Base and adds a method say_hello(), and an Intermediate class that inherits
+from both Base and Derived and overrides the greet() method. Show the use of
+super() and method overriding.
+
+Solution:
+
+class Base:
+    def greet(self):
+        return "Hello busy ppl!"
+class Derived(Base):
+    def say_hello(self):
+        return "Hello all!"
+class Intermediate(Derived):
+    def greet(self):
+        base_greeting = super().greet()  
+        return f"{base_greeting} And hello from Team!"
+my_obj = Intermediate()       
+print(my_obj.greet())      
+print(my_obj.say_hello())   
+
+
+O/p:
+
+Hello busy ppl! And hello from Team!
+Hello all!
+
+6. Create a Vehicle class with a method fuel_type(). Then, create an ElectricCar
+subclass that overrides this method to print ""Electric car uses electricity"".
+Show the use of super() to call the parent class method.
+
+Solution:
+
+class Vehicle:
+    def fuel_type(self):
+        return "This vehicle uses fuel."
+class ElectricCar(Vehicle):
+    def fuel_type(self):
+        parent_fuel_type = super().fuel_type()
+        return f"{parent_fuel_type} However, an electric car uses electricity."
+electric_car = ElectricCar()
+print(electric_car.fuel_type())  
+
+O/p:
+
+This vehicle uses fuel. However, an electric car uses electricity.
+
+
+
