@@ -1,0 +1,128 @@
+                                       **Polymorphism **
+									   
+1. Create a class Shape with a method area(). Create two subclasses, Circle and
+Rectangle, that override the area() method to calculate their respective areas.
+Instantiate objects of both classes and demonstrate polymorphism by calling the
+area() method on both objects. 
+
+Solution:
+
+import math
+class Shape:
+    def area(self):
+        raise NotImplementedError("Subclasses must implement this method")
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+    def area(self):
+        return math.pi * self.radius ** 2
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+    def area(self):
+        return self.width * self.height
+circle = Circle(5)
+rectangle = Rectangle(4, 6)
+shapes = [circle, rectangle]
+for shape in shapes:
+    print(f"The area of the shape is: {shape.area()}")
+	
+O/p:
+
+The area of the shape is: 78.53981633974483
+The area of the shape is: 24
+
+
+2. Create a class Complex to represent complex numbers. Overload the +
+operator to add two complex numbers. Implement the __add__ method to
+handle complex number addition. Test the functionality by creating two
+complex number objects and adding them. 
+
+Solution:
+
+class Complex:
+    def __init__(self, real, imaginary):
+        self.real = real
+        self.imaginary = imaginary
+    def __add__(self, other):
+        if isinstance(other, Complex):
+            real_part = self.real + other.real
+            imaginary_part = self.imaginary + other.imaginary
+            return Complex(real_part, imaginary_part)
+        return NotImplemented
+    def __str__(self):
+        return f"{self.real} + {self.imaginary}i"
+c1 = Complex(13, 12)  
+c2 = Complex(9, 23)  
+result = c1 + c2
+print("The result of adding the two complex numbers is:", result)
+
+O/p:
+
+The result of adding the two complex numbers is: 22 + 35i
+
+3. Create a base class BankAccount with a method calculate_interest(). Then,
+create two subclasses: SavingAccount and CurrentAccount. Override the
+calculate_interest() method in both subclasses to calculate interest based on
+different rules (e.g., 5% for saving accounts and 2% for current accounts).
+Instantiate both account types and calculate the interest for each. 
+
+Solution:
+
+class BankAccount:
+    def __init__(self, balance):
+        self.balance = balance
+    def calculate_interest(self):
+        raise NotImplementedError("Subclasses must implement this method")
+class SavingAccount(BankAccount):
+    def __init__(self, balance):
+        super().__init__(balance)
+    def calculate_interest(self):
+        interest = self.balance * 0.06 
+        return interest
+class CurrentAccount(BankAccount):
+    def __init__(self, balance):
+        super().__init__(balance)
+    def calculate_interest(self):
+        interest = self.balance * 0.07  
+        return interest
+saving_account = SavingAccount(1000)  
+current_account = CurrentAccount(2000)  
+saving_account_interest = saving_account.calculate_interest()
+current_account_interest = current_account.calculate_interest()
+print(f"Interest for Saving Account: ${saving_account_interest:.2f}")
+print(f"Interest for Current Account: ${current_account_interest:.2f}")
+
+O/p:
+
+Interest for Saving Account: $60.00
+Interest for Current Account: $140.00
+
+4. Create a class Vector to represent vectors in 2D space. Overload the +
+operator to add two vectors. The class should support polymorphism by having
+different methods for adding vectors, and you should handle the vector addition
+using the overloaded operator.
+
+Solution:
+
+class Vector:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def __add__(self, other):
+        if isinstance(other, Vector):
+            return self.add(other)
+        return NotImplemented
+    def add(self, other):
+        return Vector(self.x + other.x, self.y + other.y)
+    def __str__(self):
+        return f"Vector({self.x}, {self.y})"
+v1 = Vector(2, 3)  
+v2 = Vector(4, 5)  
+result_vector = v1 + v2
+print("Result of vector addition:", result_vector)
+
+O/p:
+
+Result of vector addition: Vector(6, 8)
