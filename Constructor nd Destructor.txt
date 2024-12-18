@@ -1,0 +1,87 @@
+
+
+Constructor : It is a special method that is automatically called when an instance of a classs created.
+It mailnly intialize the attributes of the class. 
+*It defined as __init__().
+
+
+Destructor : It is  on the other hand, is a method that is called when an object is about destroyrd.
+*It is defined with the __del__().
+
+Example1:
+
+class Demo:
+    def __init__(self, name):                    #Constructor
+        self.name = name
+        print(f"{self.name} has been created.")
+    def __del__(self):                           # Destructor
+        print(f"{self.name} is being destroyed.")
+account = Demo("Profile")
+del account
+
+O/p:
+
+Profile has been created.
+Profile is being destroyed.
+
+Example 2:
+
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+        print(f"'{self.title}' by {self.author} has been added to the library.")
+    def __del__(self):
+        print(f"'{self.title}' by {self.author} is removed from the library.")
+book1 = Book("The wings of fire","A.P.J AbdulKalam" )
+book2 = Book("House of cards", "Sudha Murthy")
+del book1
+del book2
+
+O/p:
+
+'The wings of fire' by A.P.J AbdulKalam has been added to the library.
+'House of cards' by Sudha Murthy has been added to the library.
+'The wings of fire' by A.P.J AbdulKalam is removed from the library.
+'House of cards' by Sudha Murthy is removed from the library.
+
+Example 3:
+
+class Person:
+    def __init__(self, name):
+        self.name = name
+        print(f"Person {self.name} has been created.")
+
+    def __del__(self):
+        print(f"Person {self.name} is being destroyed.")
+people = []
+people.append(Person("Navyatha"))
+people.append(Person("Likhitha"))
+del people[1]
+
+O/p:
+
+Person Alice has been created.
+Person Bob has been created.
+Person Bob is being destroyed.
+Person Alice is being destroyed.
+
+Example 4:
+
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        print(f"Student {self.name} aged {self.age} created.")
+    def __del__(self):
+        print(f"Student {self.age} is being destroyed.")
+student1 = Student("John", 20)
+student2 = Student("Priya",22)
+del student2
+
+O/p:
+
+Student John aged 20 created.
+Student Priya aged 22 created.
+Student 22 is being destroyed.
+Student 20 is being destroyed.
