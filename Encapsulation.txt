@@ -1,0 +1,69 @@
+
+Encapsulation:
+                  It is one of the critical features of oops , which involves the bundling of data members and functions inside a single class.
+				  The user is only concerned about the rightway to provide input and excepts a correct output on the basis of the inputs Provided.
+				  
+				             Encapsulation
+	  Class ----->			Methods | Variable
+	  
+
+Advantages:
+* Encapsulation Provides well-defined , readable code.
+* Prevents Accidental Modification or Deletion.
+* Encapsulation Provides Security.
+
+
+            **Access Modifier in Python Encapsulation
+		
+sometimes there might be a need to restrict or limit access to certain
+variables while Programming. There we need an access Modifier.
+
+1. Public Member
+2. Private Member
+3. Protected Member
+
+** Private  : To prevent them from being accessed directly from outside the class.
+
+** Public   : Provide a controlled way to interact with the Private attributes.
+This way can ensure that the internal state of object is modified in a safe way.
+
+** Protected : It can be accessed from outside the class 
+it is a convention to treat it as if it should not be accessed directly.
+
+
+** Access Control : The user  cannot directly modify the outside class, Preserving the intigrity of the data.
+
+
+Example:
+
+class BankAccount:
+    def __init__(self, account_number, balance=0):
+        self.__account_number = account_number 
+        self.__balance = balance  
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+            print(f"Deposited: {amount}, New Balance: {self.__balance}")
+        else:
+            print("Deposit amount must be positive.")
+    def withdraw(self, amount):
+        if 0 < amount <= self.__balance:
+            self.__balance -= amount
+            print(f"Withdrew: {amount}, New Balance: {self.__balance}")
+        else:
+            print("Invalid withdrawal amount.")
+    def get_balance(self):
+        return self.__balance
+    def get_account_number(self):
+        return self.__account_number
+account = BankAccount("abc123")
+account.deposit(1000)
+account.withdraw(500)
+print(f"Account Number: {account.get_account_number()}, Balance: {account.get_balance()}")
+
+
+O/p:
+
+Deposited: 1000, New Balance: 1000
+Withdrew: 500, New Balance: 500
+Account Number: abc123, Balance: 500
