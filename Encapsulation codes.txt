@@ -1,0 +1,146 @@
+                                **Encapsulation**
+								
+1. Create a class BankAccount with private attributes account_number and
+balance. Write methods to deposit, withdraw, and display the balance. Ensure
+the balance is not accessible directly from outside the class. 
+
+Solution:
+
+class BankAccount:
+    def __init__(self, account_number, initial_balance=0):
+        self.__account_number = account_number   
+        self.__balance = initial_balance         
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+            print(f"Deposited: ${amount}")
+        else:
+            print("Deposit amount must be positive.")
+    def withdraw(self, amount):
+        if amount > 0:
+            if amount <= self.__balance:
+                self.__balance -= amount
+                print(f"Withdrawn: ${amount}")
+            else:
+                print("Insufficient funds.")
+        else:
+            print("Withdrawal amount must be positive.")
+    def display_balance(self):
+        print(f"Current balance: ${self.__balance}")
+account = BankAccount("123abc", 100)
+account.deposit(60)
+account.withdraw(30)
+account.display_balance()
+
+O/p:
+Deposited: $60
+Withdrawn: $30
+Current balance: $130
+
+2. Write a Student class that contains private attributes like name, marks, and
+grade. Create public methods to set and get the student's grade, but do not allow
+direct access to the marks or name attributes. 
+
+Solution:
+
+class Student:
+    def __init__(self, name, marks):
+        self.__name = name                
+        self.__marks = marks            
+        self.__grade = self.calculate_grade() 
+    def calculate_grade(self):
+        if self.__marks >= 90:
+            return 'A'
+        elif self.__marks >= 75:
+            return 'B'
+        elif self.__marks >= 50:
+            return 'C'
+        else:
+            return 'Fail'
+    def set_grade(self, grade):
+        self.__grade = grade
+    def get_grade(self):
+        return self.__grade
+    def get_name(self):
+        return self.__name
+    def get_marks(self):
+        return self.__marks
+student = Student("Navya", 85)
+print(f"Student Name: {student.get_name()}")
+print(f"Marks: {student.get_marks()}")
+print(f"Grade: {student.get_grade()}")
+
+O/p:
+
+Student Name: Navya
+Marks: 85
+Grade: B
+
+3. Create a PasswordManager class with a private attribute password. Write
+methods to set a password and check if a given password matches the stored
+one. Ensure that the password cannot be accessed or modified directly from
+outside the class. 
+
+Solution:
+
+class PasswordManager:
+    def __init__(self):
+        self.__password = None  
+    def set_password(self, password):
+        if isinstance(password, str) and len(password) > 0:
+            self.__password = password
+            print("Password set successfully.")
+        else:
+            print("Password must be a non-empty string.")
+    def check_password(self, password):
+        if self.__password is None:
+            print("Password is not set.")
+            return False
+        return self.__password == password
+manager = PasswordManager()
+manager.set_password("my_secure_password")
+print(manager.check_password("wrong_password"))    
+
+O/p:
+
+Password set successfully.
+False
+
+4. Create a Car class with private attributes brand, model, and price. Write getter
+and setter methods for price and brand to control the values being set. Ensure
+that the price cannot be negative.
+
+Solution:
+
+class Car:
+    def __init__(self, brand, model, price):
+        self.__brand = brand  
+        self.__model = model  
+        self.set_price(price)
+    def get_brand(self):
+        return self.__brand
+    def set_brand(self, brand):
+        self.__brand = brand 
+    def get_price(self):
+        return self.__price
+    def set_price(self, price):
+        if price < 0:
+            print("Price cannot be negative.")
+        else:
+            self.__price = price  
+car = Car("Toyota", "Camry", 24000)
+print(f"Car Brand: {car.get_brand()}")
+print(f"Car Price: ${car.get_price()}")
+car.set_brand("Honda")
+car.set_price(29000)  
+print(f"Updated Car Brand: {car.get_brand()}")
+print(f"Updated Car Price: ${car.get_price()}")
+car.set_price(-3000) 
+
+O/p:
+
+Car Brand: Toyota
+Car Price: $24000
+Updated Car Brand: Honda
+Updated Car Price: $29000
+Price cannot be negative.
