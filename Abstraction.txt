@@ -1,0 +1,69 @@
+
+Abstraction: Abstraction means hiding the implementation details of an object and only showing the essential features.
+
+Ex:
+
+class CoffeeMachine:                #class
+    def __init__(self):
+        self.__water_temp = 0
+    def make_coffee(self):          # this method is the only Public method so,the user needs to know about.
+        self.__heat_water()         # the __heat_water and __mix_coffee are private methods are used to internal by the
+        self.__mix_coffee()                make_coffee method.
+        print("Coffee is ready... njoy!")
+    def __heat_water(self):
+        self.__water_temp = 100
+        print("Water is heated!")
+    def __mix_coffee(self):
+        print("Coffee is mixed!")
+coffee_machine = CoffeeMachine()
+coffee_machine.make_coffee()
+* Note : "abstraction is hiding the internal implementation details of making coffee and 
+only shows the make_coffee method to the user."
+O/p:
+
+Water is heated!
+Coffee is mixed!
+Coffee is ready... njoy
+
+Difference between Abstraction and Encapsulation:
+
+* Abstraction is only about exposing a simple interface,
+while Encapsulation is about Protecting the internal state.
+
+* Abstraction focuses on hiding internal details while,
+Encapsulation focuses on bundling the data and methods.
+
+* Abstraction can be acheived through interface or abstract class,
+while Encapsulation is typically acheived through classes and objects.
+
+Ex:
+
+class Weather:
+    def __init__(self, api_key):
+        self.api_key = api_key
+    def get_weather(self, city):
+        return f"Weather data for {city} retrieved using API key {self.api_key}."
+weather_api = Weather("my_secret_api_key")
+print(weather_api.get_weather("Rajmundry"))
+
+#Note: #  we'll abstract away the implementation detail.
+
+O/p:
+Weather data for Rajmundry retrieved using API key my_secret_api_key.
+
+
+Ex:
+
+def calculate_total_price(prices):
+    def apply_discount(price):
+        return price * 0.9                  #  10% discount
+    total = sum(apply_discount(price) for price in prices)
+    return total
+prices = [100, 200, 300]
+total_price = calculate_total_price(prices)
+print("Total Price after discount:", total_price)
+
+O/p:
+
+Total Price after discount: 540.0
+
