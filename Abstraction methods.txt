@@ -1,0 +1,134 @@
+
+                               **Abstraction Methods**
+							
+1. Abstract Base Classes(ABCs): Provide a way to define methods that must be created within any child classesbuit
+from the abstract base class.
+
+Ex:
+
+from abc import ABC
+class Animal(ABC):
+    def sound(self):
+        pass
+class Dog(Animal):
+    def sound(self):
+        return "Bark"
+class Cat(Animal):
+    def sound(self):
+        return "Meow"
+dog = Dog()
+cat = Cat()
+print(dog.sound())  
+print(cat.sound())  
+
+O/p:
+
+Bark
+Meow
+
+2. Interfaces: It define an interface with abstract methods that must be implemented by any class that claims
+to implement the interface.
+
+3. Duck Typing: It allows for a form of abstraction known as duck typing.
+
+Ex:
+
+class Bird:
+    def fly(self):
+        return "Flapping wings"
+class Airplane:
+    def fly(self):
+        return "Jet engines roaring"
+def let_it_fly(flyer):
+    print(flyer.fly())
+let_it_fly(Bird())  
+let_it_fly(Airplane()) 
+
+O/p:
+
+Flapping wings
+Jet engines roaring
+
+** Concrete Methods: These methods that have full implementations in abstract class.
+they can be inherited by subclasses and used directly without needing to be redefined.
+
+Ex:
+
+from abc import ABC
+class Animal(ABC):
+    def species(self):
+        pass                            # abstract property  must be implemented by subclasses
+class Dog(Animal):
+    @property
+    def species(self):
+        return "Canine"
+dog = Dog()
+print(dog.species)
+
+O/p:
+
+Canine
+
+Ex: 
+
+from abc import ABC
+class Animal(ABC):
+    def sleep(self):
+        print(" I am going to sleeping in a while")
+    def sound(self):
+        print("It defining the sound of the animal")
+        pass
+class Dog(Animal):
+    def sound(self):
+        print("Bark")
+class Cat(Animal):
+    def sound(self):
+        print("Meow")
+class Lion(Animal):
+    def sound(self):
+        print("Roar")
+c = Cat()
+c.sleep()
+c.sound()
+c = Dog()
+c.sound()
+
+O/p:
+
+I am going to sleeping in a while
+Meow
+Bark
+
+Ex:
+
+from abc import ABC
+class Shape(ABC):
+    def area(self):
+        pass
+class Square(Shape):
+    def __init__(self,side):
+        self.side=side
+    def area(self):
+        return self.side **2
+square = Square(5)
+print(square.area())
+
+O/p:
+
+25
+
+Ex:
+
+from abc import ABC
+class Vehicle:
+    def start_engine(self):
+        pass
+class Car(Vehicle):
+    def start_engine(self):
+        return " Car engine started.........."
+car = Car()
+print(car.start_engine())
+        
+O/p:
+
+Car engine started..........
