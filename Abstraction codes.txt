@@ -1,0 +1,126 @@
+
+
+1. Create an abstract class Shape with an abstract method draw(). Then, create
+two subclasses, Circle and Rectangle, which implement the draw() method.
+Instantiate objects of both classes and call their draw() methods to display the
+respective shapes
+
+Solution:
+
+from abc import ABC
+class Shape(ABC):
+    def draw(self):
+        pass
+class Circle(Shape):
+    def draw(self):
+        print("Drawing a circle")
+class Rectangle(Shape):
+    def draw(self):
+        print("Drawing a rectangle")
+circle=Circle()
+rectangle=Rectangle()
+circle.draw()
+rectangle.draw()
+    
+O/p:
+
+Drawing a circle
+Drawing a rectangle
+
+
+2. Create an abstract class PaymentMethod with an abstract method
+process_payment(). Then, create two subclasses CreditCardPayment and
+PayPalPayment that implement the process_payment() method. Test the
+implementation by creating objects of both subclasses and calling
+process_payment().
+
+Solution:
+
+from abc import ABC
+class PaymentMethod(ABC):
+    def process_payment(self):
+        pass
+class CreditCardPayment(PaymentMethod):
+    def process_payment(self):
+        print("Processing payment through Credit Card.")
+class PayPalPayment(PaymentMethod):
+    def process_payment(self):
+        print("Processing payment through PayPal.")
+credit_card_payment = CreditCardPayment()
+paypal_payment = PayPalPayment()
+credit_card_payment.process_payment()   
+paypal_payment.process_payment()    
+
+O/p:
+
+Processing payment through Credit Card.
+Processing payment through PayPal.
+
+3. Create an abstract class Shape using the abc module with an abstract method
+draw(). Then, create two subclasses Circle and Square that implement the
+draw() method. Instantiate the subclasses and demonstrate polymorphism by
+calling the draw() method.
+
+Solution:
+
+from abc import ABC
+class Shape(ABC):
+    def draw(self):
+        pass
+class Circle(Shape):
+    def draw(self):
+        print("Drawing a Circle")
+class Square(Shape):
+    def draw(self):
+        print("Drawing a Square")
+shapes = [Circle(), Square()]
+for shape in shapes:
+    shape.draw()
+	
+O/p:
+
+Drawing a Circle
+Drawing a Square
+
+
+4. Create an abstract class Employee with abstract methods calculate_salary()
+and get_position(). Create two subclasses FullTimeEmployee and
+PartTimeEmployee that implement these methods. Test the implementation by
+creating objects of both subclasses and calculating the salary and position.
+
+Solution:
+
+from abc import ABC
+class Employee(ABC):
+    def calculate_salary(self):
+        pass
+    def get_position(self):
+        pass
+class FullTimeEmployee(Employee):
+    def __init__(self, name, base_salary):
+        self.name = name
+        self.base_salary = base_salary
+    def calculate_salary(self):
+        return self.base_salary
+    def get_position(self):
+        return "Full-Time Employee"
+class PartTimeEmployee(Employee):
+    def __init__(self, name, hourly_rate, hours_worked):
+        self.name = name
+        self.hourly_rate = hourly_rate
+        self.hours_worked = hours_worked
+    def calculate_salary(self):
+        return self.hourly_rate * self.hours_worked
+    def get_position(self):
+        return "Part-Time Employee"
+if __name__ == "__main__":
+    ft_employee = FullTimeEmployee("Priya", 60000)
+    print(f"{ft_employee.get_position()} - Name: {ft_employee.name}, Salary: ${ft_employee.calculate_salary()}")
+    pt_employee = PartTimeEmployee("Riyaa", 20, 25)  
+    print(f"{pt_employee.get_position()} - Name: {pt_employee.name}, Salary: ${pt_employee.calculate_salary()}")
+
+
+O/p:
+
+Full-Time Employee - Name: Priya, Salary: $60000
+Part-Time Employee - Name: Riyaa, Salary: $500
