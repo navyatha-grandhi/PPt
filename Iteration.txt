@@ -1,0 +1,234 @@
+
+
+Iteration:  
+           It is the processof repeatedly executing block of code or accessing elements of a data structure, 
+		   such as list or tuple.
+		   
+Iterator: 
+           An object that keeps track of its position and provides access to the next element.
+		   
+Iterable :
+           An object that can be iterated over, such as a list or string.
+		   
+		   
+Ex Iteration:
+
+greetings = "Hello Team"
+for char in greetings:
+    print(char)
+	
+O/p:
+
+H
+e
+l
+l
+o
+ 
+T
+e
+a
+m
+
+** iterate over the characters of the string using for loop.
+
+Ex2:
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)
+
+O/p:
+
+apple
+banana
+cherry
+
+
+Ex3:
+
+count = 0
+while count < 10:
+    print(count)
+    count += 1
+	
+O/p:
+
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+Ex:
+
+squares = [x**2 for x in range(15)]
+print(squares)
+
+O/p:
+
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196]
+
+Ex4:
+
+Names = ["Navyatha", "Likhitha", "Priya"]
+for index, Names in enumerate(Names):
+    print(index, Names)
+	
+O/p:
+
+0 Navyatha
+1 Likhitha
+2 Priya
+
+Ex:
+
+person = {"name": "Priya", "age": 28, "city": "America"}
+for key, value in person.items():
+    print(key, value)
+	
+O/p:
+
+name Priya
+age 28
+city America
+
+Ex:
+
+list1 = [1, 2, 3]
+list2 = ['Hello', 'busy', 'ppl']
+for number, Words in zip(list1, list2):
+    print(number, Words)
+	
+O/p:
+
+1 Hello
+2 busy
+3 ppl
+
+
+
+
+Ex Iterator :
+
+
+numbers = [1,2,3,4,5]
+iterator = iter(numbers)
+while True:
+    try:
+        print(next(iterator))
+    except StopIteration:
+        break
+		
+O/p:
+
+1
+2
+3
+4
+5
+
+** numbers an iterator created from the list using iter() and while loop is to iterate over the list using the iterator.
+
+
+Ex:
+
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+
+for key in my_dict:
+    print(key, my_dict[key])
+	
+O/p:
+
+a 1
+b 2
+c 3
+
+Ex:
+
+class FibonacciIterator:
+    def __init__(self):
+        self.a, self.b = 0, 1
+    def __iter__(self):
+        return self
+    def __next__(self):
+        result = self.a
+        self.a, self.b = self.b, self.a + self.b
+        return result
+fibonacci = FibonacciIterator()
+for _ in range(10): 
+    print(next(fibonacci))
+	
+O/p:
+
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+
+
+Ex Iterable : 
+
+numbers = [1,2,3,4,5]
+for item in numbers:
+    print(item)
+	
+O/p:
+
+1
+2
+3
+4
+5
+
+** numbers an iterable, and we use a for loop to iterate over its elements.
+
+
+Ex:
+
+coords = ((0, 0), (1, 2), (2, 3))
+for x, y in coords:
+    print(f"Coordinate: x={x}, y={y}")
+	
+O/p:
+
+Coordinate: x=0, y=0
+Coordinate: x=1, y=2
+Coordinate: x=2, y=3
+
+Ex:
+
+fruits = ['kiwi', 'Orange', 'strawberry']
+for index, fruit in enumerate(fruits):
+    print(f"Index: {index}, Fruit: {fruit}")
+	
+O/p:
+
+Index: 0, Fruit: kiwi
+Index: 1, Fruit: Orange
+Index: 2, Fruit: strawberry
+
+
+Ex:
+
+names = ['Priya', 'Isha', 'Riya']
+ages = [30, 24, 29]
+for name, age in zip(names, ages):
+    print(f"{name} is {age} years old.")
+	
+O/p:
+
+Priya is 30 years old.
+Isha is 24 years old.
+Riya is 29 years old.
+
