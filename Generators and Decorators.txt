@@ -1,0 +1,140 @@
+
+
+** Generators :  It is simple way to create iterators using a function
+that allows you to iterate through a sequence.
+
+They are defined using the  "Yeild" Statement, allows the function
+to return a value and pause its execution.
+
+Ex:
+
+
+def fibonacci():
+    a, b = 0, 1
+    while True:
+        yield a
+        a, b = b, a + b
+fib_gen = fibonacci()
+for _ in range(10):  
+    print(next(fib_gen))
+	
+O/p:
+
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+
+Ex:
+
+def square_numbers(limit):
+    for i in range(limit):
+        yield i * i
+squares_gen = square_numbers(6)
+for square in squares_gen:
+    print(square)
+	
+O/p:
+
+0
+1
+4
+9
+16
+25
+
+Ex:
+
+def countdown(n):
+    while n>0:
+        yield n
+        n -= 1
+countdown_gen = countdown(9)
+for number in countdown_gen:
+    print(number)
+	
+O/p:
+
+9
+8
+7
+6
+5
+4
+3
+2
+1
+
+** Decorators: They are Powerful and expressive way to modify or enhance
+functions.
+They allow to wrap another function in order to extend its behaviour
+without permenently modifying it.
+
+Ex: they used for Logging, caching,,enforcing access control etc.
+
+Ex:
+
+def my_decorator(func):
+    def wrapper():
+        print("Something is happening before the function is called.")
+        func()
+        print("Something is happening after the function is called.")
+    return wrapper
+@my_decorator
+def say_hello():
+    print("Hello Team!")
+
+say_hello()
+        
+O/p:
+
+Something is happening before the function is called.
+Hello Team!
+Something is happening after the function is called.
+
+Ex:
+
+def require_permission(permission):
+    def decorator(func):
+        def wrapper(user_permission):
+            if user_permission == permission:
+                return func()
+            else:
+                return "Access denied!"
+        return wrapper
+    return decorator
+@require_permission("admin")
+def delete_user():
+    return "User deleted."
+print(delete_user("admin"))  
+print(delete_user("guest"))   
+        
+		
+O/p:
+
+User deleted.
+Access denied!
+
+Ex:
+
+def logger(func):
+    def wrapper(*args, **kwargs):
+        print(f"Calling function '{func.__name__}' with arguments {args} and {kwargs}")
+        return func(*args, **kwargs)
+    return wrapper
+@logger
+def add(a, b):
+    return a + b
+result = add(3, 9)
+print("Result:", result)
+        
+O/p:
+
+Calling function 'add' with arguments (3, 9) and {}
+Result: 12
